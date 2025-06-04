@@ -266,6 +266,24 @@ app.use((err, req, res, next) => {
   });
 });
 
+app.get('/search', (req, res) => {
+  const searchTerm = req.query.q;
+
+  // Consulta ao banco de dados para buscar posts cujo título ou conteúdo contenham o termo de busca
+  db.all(
+    'SELECT * FROM posts WHERE title LIKE ? OR content LIKE ?',
+    [`%${searchTerm}%`, `%${searchTerm}%`],
+    (err, rows) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send('Erro no servidor');
+      } else {
+        res.render('posts', { posts: rows });
+      }
+    }
+  );
+});
+
 app.listen(3000, () => {
   console.log("Servidor NODEjs ativo na porta 3000");
 });
