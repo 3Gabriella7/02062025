@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-    <%- include("../partials/head") %>
+<html lang="pt-BR">
+  <%- include("../partials/head") %>
 <body>
-    Página inicial
+  <%- include("../partials/menu") %>
+
+
+  
     <br>
-    <img src='./static/senai.png' width="150"/>
-    <a href="/sobre">Sobre</a>
+    <h1>Página Inicial</h1>
+    <div class="page-box"></div>
+    <main>
+       
+        <br>
+        <form action="/login" method="post" class="formItens">
+            <img src='./static/senai.png' width="365"/> 
+            <br>
+            <button type="submit" >Entrar</button>
+        </form>
+    </main>
+</div>
 
     <%- include("../partials/footer") %>
     <%- include("../partials/menu") %>
 
+
+    <%- include("../partials/footer") %>
 </body>
-</html>
 </html>

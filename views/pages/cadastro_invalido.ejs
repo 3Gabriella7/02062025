@@ -1,7 +1,34 @@
-<%- include('../partials/head') %>
-
-<h1>Cadastro inválido</h1>
-<p>Este nome de usuário já está cadastrado.</p>
-<a href="/cadastro">Voltar para o cadastro</a>
-
-<%- include('../partials/footer') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuário não cadastrado</title>
+    <link rel="stylesheet" href="./static/styles.css">
+</head>
+<body>
+    <center>
+        <br>
+        <h2 class="titulo-index">Cadastro Inválido 😧</h2><br>
+        <img src='./static/nao.jpg' /><br><br>
+        <h3>vixii😮<br><br>
+            verifique se este nome já não está cadastrado e tente novamente😶‍🌫️.</h3><br>
+        <a href="/cadastro"><button type="submit">CADASTRAR</button></a>
+        <a href="/login"><button type="submit">LOGIN</button></a><br><br>
+        <%- include("../partials/footer") %>
+</body>
+<header>
+    <nav>
+       <a href="/">Index</a>
+       <a href="/sobre">Sobre</a>
+       <% if (!req.session.loggedin) { %>
+       <a href="/cadastro">cadastro</a>
+       <a href="/login">Login</a>
+       <% } else { %>
+       <a href="/dashboard">Dashboard</a>
+       <a href="/logout">Logout</a>
+       <a href="/post_create">Criar postagem</a>
+       <% } %>
+    </nav>
+</header>
+</html>

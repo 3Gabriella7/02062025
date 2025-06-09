@@ -1,14 +1,14 @@
 <header>
-     <nav>
-        <a href="/">Index</a>
+    <nav>
+        <a href="/">Inicial</a>
         <a href="/sobre">Sobre</a>
-        <% if (!req.session.loggedin) { %>
-        <a href="/cadastro">cadastro</a>
-        <a href="/login">Login</a>
-        <% } else { %>
-        <a href="/dashboard">Dashboard</a>
-        <a href="/logout">Logout</a>
-        <a href="/post_create">Criar postagem</a>
-        <% } %>
-     </nav>
- </header>
+       <% if (!req.session.loggedin) { %>
+       <a href="/cadastro">cadastro</a>
+       <a href="/login">Login</a>
+       <% } else { %>
+       <a href="/dashboard">Dashboard</a>
+       <a href="/logout">Logout</a>
+       <a href="/post_create">Criar postagem</a>
+       <% } %>
+    </nav>
+</header>

@@ -2,17 +2,29 @@
 <html lang="en">
     <%- include("../partials/head") %>
 <body>
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>CADASTRAR POST</h1>
     
     <%- include ("../partials/menu") %>
     <main>
         <form action="/post_create" method="post" style="justify-content: left; text-align: left;">
-            <label for="titulo">Título:</label>
-            <input type="text" id="titulo" name="titulo" required>
-            <label for="conteudo">Título:</label>
-            <textarea id="conteudo" name="conteudo" rows="10" cols="70" required></textarea>
-            
+            <center>
+            <label for="titulo">Título:</label> <BR>
+            <input type="text" id="titulo" name="titulo" required> <BR>
+            <label for="conteudo">Conteúdo:</label>
+            <textarea id="conteudo" name="conteudo" rows="10" cols="50" required></textarea> 
+            <br>
+            <br><br>
+       
             <button type="submit">Cadastrar postagem</button>
+        </center>
         </form>
     </main>
     <%- include ("../partials/footer") %></p>

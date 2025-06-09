@@ -18,6 +18,28 @@ body, html {
   flex-direction: column; /* Alinha os elementos filhos (header, main e footer) verticalmente */
 }
 
+.sobre-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px; /* Espaço entre imagem e texto */
+  margin-top: 20px;
+}
+
+.sobre-texto {
+  flex: 1;
+  font-family: 'Georgia', serif; /* Fonte diferente do corpo */
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  max-width: 800px;
+}
+
+.sobre-texto p {
+  margin-bottom: 10px;
+}
+
+
 /* Estilo do contêiner principal */
 main {
   display: flex; /* Ativa o Flexbox no main */
@@ -50,7 +72,11 @@ header {
   left: 0; /* Alinha à esquerda */
   width: 100%; /* Ocupa toda a largura */
   background: linear-gradient(90deg, #800000, #990000); /* Gradiente em tons de vermelho */
-  padding: 20px 0; /* Espaçamento vertical */
+  body, html {
+    padding-top: 120px;
+    padding-top: [altura-do-header];
+  }
+  
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
   z-index: 1000; /* Mantém o header acima dos demais elementos */
 }
@@ -127,18 +153,22 @@ nav a:hover img {
 }
 
 /* Estilo do botão */
-.formItens button {
-  padding: 16px; /* Espaçamento interno */
+button, a[type="submit"], a.button-link  {
+  padding: 12px 16px; /* Espaçamento interno */
   border: none; /* Remove a borda */
   border-radius: 12px; /* Bordas arredondadas */
   background-color: #800000; /* Cor de fundo vermelho escuro */
   color: white; /* Cor do texto */
-  font-size: 18px; /* Tamanho da fonte */
+  font-size: 1rem; /* Tamanho da fonte */
   font-weight: 700; /* Negrito */
   cursor: pointer; /* Muda o cursor para indicar que é clicável */
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
   letter-spacing: 1px; /* Espaçamento entre letras */
   box-shadow: 0 4px 10px rgba(128, 0, 0, 0.2); /* Sombra para profundidade */
+  text-align: center;
+  .no-underline {
+    text-decoration: none;
+  }
 }
 
 /* Efeito ao passar o mouse no botão */
@@ -174,13 +204,42 @@ p {
   margin-bottom: 20px; /* Espaçamento inferior */
 }
 
-/* Estilo do rodapé */
-footer {
-  width: 100%; /* Ocupa toda a largura */
-  background-color: #f1f1f1; /* Fundo claro */
-  border-top: 1px solid #ddd; /* Linha divisória no topo */
-  text-align: center; /* Centraliza o texto */
-  padding: 16px; /* Espaçamento interno */
-  font-size: 14px; /* Tamanho pequeno */
-  color: #555; /* Cor cinza escura */
+.footer {
+  position: sticky;
+  background-color: #990000;
+  color: white;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
+
+.footer-top {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.footer hr {
+  border: 1px solid white;
+  margin: 20px 0;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-column h4 {
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
