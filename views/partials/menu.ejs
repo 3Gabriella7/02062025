@@ -1,9 +1,14 @@
 <header>
-    <nav>
-       <a href="/"><img src='./static/senai.png' width="200"></a>
-       <a href="/sobre"><img src='./static/sobre.jpg' width="200"></a>
-       <a href="/cadastro"><img src='./static/cadastro.png' width="200"></a>
-       <a href="/login"><img src='./static/login.png' width="200"></a>
-       <a href="/dashboard"><img src='./static/dash.jpg' width="200"></a>
-    </nav>
-</header>
+     <nav>
+        <a href="/">Index</a>
+        <a href="/sobre">Sobre</a>
+        <% if (!req.session.loggedin) { %>
+        <a href="/cadastro">cadastro</a>
+        <a href="/login">Login</a>
+        <% } else { %>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+        <a href="/post_create">Criar postagem</a>
+        <% } %>
+     </nav>
+ </header>

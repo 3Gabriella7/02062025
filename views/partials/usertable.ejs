@@ -1,24 +1,24 @@
-<table width="100%">
-    <thead></thead>
-    <tr>
-        <th>ID</th>
-        <th>Username</th>
-        <th>Senha</th>
-    </tr>
+<% console.log(JSON.stringify(dados)) %>
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Username</td>
+            <td>Senha</td>
+        </tr>
+    </thead>
     <tbody>
-    <% let i;for(i=0; i<=10; i++ ) { %>
-    <tr>
-        <td><%= i %></td>
-        <td><%dados.username %></td>
-        <td><%dados.password %></td>
-    </tr>
-        <%} %>
+        <% let i;for(i = 0;i< dados.length; i++) { %>
+        <tr>
+            <td><%= dados[i].id %></td>
+            <td><%= dados[i].username %></td>
+            <td><%= dados[i].password %></td>
+        </tr>
+        <% } %>
     </tbody>
     <tfoot>
         <tr>
-            <td colspan="3">
-                <%= `Quantidade de registros ${i}` %>
-            </td>
+            <td colspan="3">Quantidade de registros: <%= dados.length %></td>
         </tr>
     </tfoot>
 </table>

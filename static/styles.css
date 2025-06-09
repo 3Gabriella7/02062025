@@ -1,63 +1,186 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
+/* Reset básico e definição de fonte padrão */
+* {
+  box-sizing: border-box; /* Faz com que padding e border não aumentem o tamanho total do elemento */
+  margin: 0; /* Remove as margens padrão dos navegadores */
+  padding: 0; /* Remove os espaçamentos internos padrão */
+  font-family: 'Poppins', sans-serif; /* Define a fonte padrão para toda a página */
 }
 
+/* Configuração geral do body e html */
+body, html {
+  height: 100%; /* Ocupa 100% da altura da janela */
+  display: flex; /* Ativa o Flexbox para alinhar o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  background-color: #f2f2f2; /* Define uma cor de fundo suave */
+  font-size: 16px; /* Define o tamanho base da fonte */
+  padding-top: 80px; /* Compensa o espaço ocupado pelo header fixo */
+  flex-direction: column; /* Alinha os elementos filhos (header, main e footer) verticalmente */
+}
+
+/* Estilo do contêiner principal */
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
+  display: flex; /* Ativa o Flexbox no main */
+  width: 100%; /* Ocupa toda a largura disponível */
+  max-width: 450px; /* Limita a largura máxima para não ficar muito grande */
+  padding: 40px; /* Espaçamento interno confortável */
+  background-color: #ffffff; /* Cor de fundo branca */
+  border-radius: 18px; /* Bordas arredondadas */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Sombra para dar profundidade */
+  border: 1px solid #eee; /* Borda sutil */
+  background-image: linear-gradient(135deg, #f8f8f8, #e0e0e0); /* Gradiente de fundo leve */
+  margin-bottom: 40px; /* Espaço entre o main e o footer */
 }
 
+/* Estilo dos títulos principais */
+h1 {
+  text-align: center; /* Centraliza o texto */
+  margin-bottom: 24px; /* Espaçamento inferior */
+  color: #2c3e50; /* Cor escura para destaque */
+  font-size: 32px; /* Tamanho grande para destaque */
+  font-weight: 700; /* Deixa o texto em negrito */
+  letter-spacing: 1px; /* Espaçamento entre letras */
+  text-transform: uppercase; /* Transforma o texto em caixa alta */
+}
+
+/* Cabeçalho fixo no topo */
+header {
+  position: fixed; /* Fixa o header no topo da página */
+  top: 0; /* Alinha ao topo */
+  left: 0; /* Alinha à esquerda */
+  width: 100%; /* Ocupa toda a largura */
+  background: linear-gradient(90deg, #800000, #990000); /* Gradiente em tons de vermelho */
+  padding: 20px 0; /* Espaçamento vertical */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+  z-index: 1000; /* Mantém o header acima dos demais elementos */
+}
+
+/* Navegação dentro do header */
+nav {
+  max-width: 1100px; /* Limita a largura da navegação */
+  margin: 0 auto; /* Centraliza a navegação */
+  display: flex; /* Usa Flexbox para alinhar os links */
+  justify-content: center; /* Centraliza os links */
+  flex-wrap: wrap; /* Permite que os links quebrem linha se necessário */
+  gap: 20px; /* Espaçamento entre os links */
+}
+
+/* Estilo dos links da navegação */
+nav a {
+  display: inline-block; /* Faz com que o link se comporte como bloco inline */
+  color: white; /* Cor do texto branca */
+  text-decoration: none; /* Remove o sublinhado padrão */
+  font-weight: 600; /* Deixa o texto mais forte */
+  font-size: 16px; /* Define o tamanho da fonte */
+  padding: 10px 18px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  transition: background-color 0.3s ease; /* Transição suave na mudança de cor de fundo */
+}
+
+/* Efeito ao passar o mouse nos links */
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente no hover */
+}
+
+/* Estilo das imagens dentro dos links */
+nav a img {
+  display: block; /* Remove espaço extra abaixo da imagem */
+  width: 200px; /* Define largura fixa */
+  border-radius: 12px; /* Bordas arredondadas */
+  border: 3px solid white; /* Borda branca ao redor */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra para destacar */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves para transformações e sombra */
+}
+
+/* Efeito ao passar o mouse nas imagens */
+nav a:hover img {
+  transform: scale(1.05); /* Aumenta levemente a escala */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* Aumenta a sombra */
+  border-color: #ecf0f1; /* Muda a cor da borda */
+}
+
+/* Estilo da área de formulário */
 .formItens {
-  background-color: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  width: 100%;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  display: flex; /* Ativa o Flexbox */
+  flex-direction: column; /* Alinha os elementos verticalmente */
+  gap: 22px; /* Espaçamento entre os itens */
 }
 
-.formItens label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
+/* Estilo dos inputs */
 .formItens input {
-  padding: 10px;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 14px 20px; /* Espaçamento interno */
+  border-radius: 12px; /* Bordas arredondadas */
+  border: 1px solid #ddd; /* Borda cinza clara */
+  font-size: 16px; /* Tamanho da fonte */
+  background-color: #fafafa; /* Fundo claro */
+  color: #333; /* Cor do texto */
+  transition: all 0.3s ease; /* Transição suave em todas as propriedades */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna sutil */
 }
 
+/* Estilo ao focar no input */
+.formItens input:focus {
+  outline: none; /* Remove a borda azul padrão do navegador */
+  border-color: #800000; /* Muda a cor da borda */
+  background-color: #fbeaea; /* Muda o fundo */
+  box-shadow: 0 0 5px rgba(128, 0, 0, 0.7); /* Sombra de destaque */
+}
+
+/* Estilo do botão */
 .formItens button {
-  padding: 10px;
-  background-color: #007BFF;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  padding: 16px; /* Espaçamento interno */
+  border: none; /* Remove a borda */
+  border-radius: 12px; /* Bordas arredondadas */
+  background-color: #800000; /* Cor de fundo vermelho escuro */
+  color: white; /* Cor do texto */
+  font-size: 18px; /* Tamanho da fonte */
+  font-weight: 700; /* Negrito */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+  letter-spacing: 1px; /* Espaçamento entre letras */
+  box-shadow: 0 4px 10px rgba(128, 0, 0, 0.2); /* Sombra para profundidade */
 }
 
+/* Efeito ao passar o mouse no botão */
 .formItens button:hover {
-  background-color: #0056b3;
+  background-color: #660000; /* Cor de fundo mais escura */
+  transform: translateY(-3px); /* Eleva levemente o botão */
+  box-shadow: 0 6px 15px rgba(102, 0, 0, 0.3); /* Aumenta a sombra */
 }
 
-a {
-  margin: 20px;
-  display: inline-block;
-  color: #007BFF;
-  text-decoration: none;
+/* Efeito ao clicar no botão */
+.formItens button:active {
+  background-color: #4d0000; /* Cor ainda mais escura */
+  transform: translateY(1px); /* Move levemente para baixo */
+  box-shadow: 0 3px 8px rgba(77, 0, 0, 0.2); /* Sombra reduzida */
 }
 
-a:hover {
-  text-decoration: underline;
+/* Estilo dos labels */
+.formItens label {
+  font-size: 14px; /* Tamanho pequeno */
+  color: #555; /* Cor cinza escura */
+  margin-bottom: 8px; /* Espaçamento inferior */
+  font-weight: 600; /* Negrito */
+}
+
+/* Estilo do placeholder nos inputs */
+.formItens input::placeholder {
+  color: #aaa; /* Cor cinza clara */
+  font-style: italic; /* Texto em itálico */
+}
+
+/* Estilo dos parágrafos */
+p {
+  margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Estilo do rodapé */
+footer {
+  width: 100%; /* Ocupa toda a largura */
+  background-color: #f1f1f1; /* Fundo claro */
+  border-top: 1px solid #ddd; /* Linha divisória no topo */
+  text-align: center; /* Centraliza o texto */
+  padding: 16px; /* Espaçamento interno */
+  font-size: 14px; /* Tamanho pequeno */
+  color: #555; /* Cor cinza escura */
 }
