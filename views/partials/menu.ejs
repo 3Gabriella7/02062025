@@ -1,14 +1,18 @@
 <header>
-    <nav>
-        <a href="/">Inicial</a>
-        <a href="/sobre">Sobre</a>
-       <% if (!req.session.loggedin) { %>
-       <a href="/cadastro">cadastro</a>
-       <a href="/login">Login</a>
-       <% } else { %>
-       <a href="/dashboard">Dashboard</a>
-       <a href="/logout">Logout</a>
-       <a href="/post_create">Criar postagem</a>
-       <% } %>
-    </nav>
+  <nav>
+    <a href="/">Inicial</a>
+    <a href="/sobre">Sobre</a>
+    <% if (!req.session.loggedin) { %>
+    <a href="/cadastro">cadastro</a>
+    <a href="/login">Login</a>
+    <% } else { %>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>
+    <a href="/post_create">Criar postagem</a>
+    <form action="/buscar" method="post" style="display: flex; gap: 10px;">
+      <button type="submit" style="padding: 8px 12px; border-radius: 6px; background-color: #800000; color: white; border: none;">Buscar</button>
+      <input type="text" name="q" placeholder="Buscar posts..." required style="padding: 8px; border-radius: 6px; border: 1px solid #ccc;">
+    </form>
+    <% } %>
+  </nav>
 </header>

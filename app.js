@@ -57,6 +57,38 @@ app.get("/dashboard", (req, res, next) => {
   }
 });
 
+app.post("/buscar", (req, res, next) => {
+  // Verificar variáveis que usadas aqui
+  const buscar = req.body.q;
+  console.log("Busca post: ", buscar);
+  // Le usuário logado 
+  if (req.session.loggedin)
+
+    // Buscar post no BD
+
+
+    db.all("SELECT * FROM posts WHERE titulo LIKE ? OR conteudo LIKE ?", [`%${buscar}%`, `%${buscar}%`], (err, row) => {
+      if (err) return next(err);
+      if (row); {
+        res.render("partials/views_posts", {
+          titulo: "postagem",
+          dados: row,
+          req: req,
+        })
+      }else{
+        res.send("nenhum post de acordo com sua descrição foi encontrado");
+      }
+
+    }
+      // Se há posts façao  ...
+
+      // Se não há posts faça ...
+
+    )
+  // Se não estive logado faça ...
+
+});
+
 app.get("/post_create", (req, res) => {
   if (req.session.loggedin) {
     res.render("pages/post_form", {
